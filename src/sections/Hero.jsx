@@ -42,7 +42,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="min-h-screen flex flex-col justify-center relative overflow-hidden"
+      className="min-h-screen flex flex-col justify-between relative overflow-hidden px-6 md:px-12 lg:px-24 pt-28 md:pt-36 pb-12"
     >
       {/* Subtle Grid Background */}
       <div
@@ -60,8 +60,8 @@ export default function Hero() {
       />
 
       {/* Top Info Bar */}
-      <div ref={topLineRef} className="absolute top-24 md:top-32 left-0 w-full px-6 md:px-12 lg:px-24 z-10">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+      <div ref={topLineRef} className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted">React.js Developer</span>
           <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted hidden sm:block">Based in Cairo, Egypt</span>
           <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted flex items-center">
@@ -71,37 +71,35 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Main Name */}
-      <div className="px-6 md:px-12 lg:px-24 w-full relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="overflow-hidden">
-            <h1 ref={row1Ref} className="font-heading font-extrabold text-foreground" style={nameStyle}>NADER</h1>
-          </div>
-          <div className="overflow-hidden">
-            <div ref={row2Ref} className="flex items-center gap-3 md:gap-6">
-              <h1 className="font-heading font-extrabold text-foreground" style={nameStyle}>HANI</h1>
-              <div ref={circleRef} className="shrink-0 w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center" style={{ border: "1.5px solid var(--color-accent)" }}>
-                <svg viewBox="0 0 100 100" className="w-full h-full">
-                  <defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
-                  <text className="fill-accent" style={{ fontSize: "11.5px", letterSpacing: "2.5px" }}>
-                    <textPath href="#cp">FRONTEND • DEVELOPER • REACT •</textPath>
-                  </text>
-                </svg>
-              </div>
+      {/* Main Name — centered vertically */}
+      <div className="max-w-7xl mx-auto w-full relative z-10 my-auto py-8">
+        <div className="overflow-hidden">
+          <h1 ref={row1Ref} className="font-heading font-extrabold text-foreground" style={nameStyle}>NADER</h1>
+        </div>
+        <div className="overflow-hidden">
+          <div ref={row2Ref} className="flex items-center gap-3 md:gap-6">
+            <h1 className="font-heading font-extrabold text-foreground" style={nameStyle}>HANI</h1>
+            <div ref={circleRef} className="shrink-0 w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center" style={{ border: "1.5px solid var(--color-accent)" }}>
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
+                <text className="fill-accent" style={{ fontSize: "11.5px", letterSpacing: "2.5px" }}>
+                  <textPath href="#cp">FRONTEND • DEVELOPER • REACT •</textPath>
+                </text>
+              </svg>
             </div>
           </div>
-          <div className="overflow-hidden">
-            <div ref={row3Ref} className="flex items-center gap-4 md:gap-8">
-              <h1 className="font-heading font-extrabold shrink-0" style={{ ...nameStyle, WebkitTextStroke: "1.5px var(--color-accent)", color: "transparent" }}>ALI</h1>
-              <div className="h-[1.5px] flex-1" style={{ backgroundColor: "var(--color-border)" }} />
-            </div>
+        </div>
+        <div className="overflow-hidden">
+          <div ref={row3Ref} className="flex items-center gap-4 md:gap-8">
+            <h1 className="font-heading font-extrabold shrink-0" style={{ ...nameStyle, WebkitTextStroke: "1.5px var(--color-accent)", color: "transparent" }}>ALI</h1>
+            <div className="h-[1.5px] flex-1" style={{ backgroundColor: "var(--color-border)" }} />
           </div>
         </div>
       </div>
 
       {/* Bottom */}
-      <div ref={bottomRef} className="absolute bottom-16 md:bottom-14 left-0 w-full px-6 md:px-12 lg:px-24 z-10">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+      <div ref={bottomRef} className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-8">
           <p className="font-body text-muted text-xs md:text-sm max-w-xs md:max-w-sm leading-relaxed">
             Specializing in building responsive, interactive web applications with clean code and exceptional user experiences.
           </p>
@@ -112,12 +110,12 @@ export default function Hero() {
             </span>
           </a>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div ref={scrollRef} className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10">
-        <div className="w-[1px] h-8 md:h-10 relative overflow-hidden" style={{ backgroundColor: "var(--color-border)" }}>
-          <div className="w-full h-4 absolute top-0 left-0" style={{ backgroundColor: "var(--color-accent)", animation: "scrollDown 2s ease-in-out infinite" }} />
+        {/* Scroll Indicator */}
+        <div ref={scrollRef} className="flex justify-center">
+          <div className="w-[1px] h-8 md:h-10 relative overflow-hidden" style={{ backgroundColor: "var(--color-border)" }}>
+            <div className="w-full h-4 absolute top-0 left-0" style={{ backgroundColor: "var(--color-accent)", animation: "scrollDown 2s ease-in-out infinite" }} />
+          </div>
         </div>
       </div>
 
