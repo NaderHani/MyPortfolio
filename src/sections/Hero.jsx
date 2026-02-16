@@ -81,37 +81,39 @@ export default function Hero() {
       {/* Floating Gradient Orb */}
       <div
         ref={orbRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
         style={{
-          width: "clamp(300px, 40vw, 600px)",
-          height: "clamp(300px, 40vw, 600px)",
+          width: "clamp(250px, 35vw, 500px)",
+          height: "clamp(250px, 35vw, 500px)",
           borderRadius: "50%",
           background: "radial-gradient(circle, var(--color-accent) 0%, transparent 70%)",
-          opacity: 0.12,
-          filter: "blur(60px)",
+          opacity: 0.08,
+          filter: "blur(80px)",
         }}
       />
 
-      {/* Decorative Floating Shapes */}
-      <div
-        className="absolute top-[20%] right-[10%] w-3 h-3 rounded-full pointer-events-none"
-        style={{ backgroundColor: "var(--color-accent)", opacity: 0.5, animation: "float 6s ease-in-out infinite" }}
-      />
-      <div
-        className="absolute bottom-[30%] left-[8%] w-2 h-2 rounded-full pointer-events-none"
-        style={{ backgroundColor: "var(--color-accent)", opacity: 0.4, animation: "float 8s ease-in-out infinite reverse" }}
-      />
-      <div
-        className="absolute top-[40%] left-[20%] w-16 h-16 rounded-full pointer-events-none"
-        style={{ border: "1px solid var(--color-accent)", opacity: 0.15, animation: "float 10s ease-in-out infinite" }}
-      />
-      <div
-        className="absolute bottom-[25%] right-[15%] w-24 h-24 pointer-events-none"
-        style={{ border: "1px solid var(--color-border)", opacity: 0.2, animation: "spin 30s linear infinite", borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%" }}
-      />
+      {/* Decorative Floating Shapes — behind content */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div
+          className="absolute top-[20%] right-[10%] w-2 h-2 rounded-full"
+          style={{ backgroundColor: "var(--color-accent)", opacity: 0.35, animation: "float 6s ease-in-out infinite" }}
+        />
+        <div
+          className="absolute bottom-[30%] left-[8%] w-1.5 h-1.5 rounded-full"
+          style={{ backgroundColor: "var(--color-accent)", opacity: 0.25, animation: "float 8s ease-in-out infinite reverse" }}
+        />
+        <div
+          className="absolute top-[40%] right-[5%] w-12 h-12 rounded-full"
+          style={{ border: "1px solid var(--color-accent)", opacity: 0.1, animation: "float 10s ease-in-out infinite" }}
+        />
+        <div
+          className="absolute bottom-[20%] right-[12%] w-16 h-16 rounded-full"
+          style={{ border: "1px solid var(--color-border)", opacity: 0.1, animation: "spin 30s linear infinite" }}
+        />
+      </div>
 
       {/* Top Info Bar */}
-      <div ref={topLineRef} className="absolute top-24 md:top-32 left-0 w-full px-6 md:px-12 lg:px-24 z-10">
+      <div ref={topLineRef} className="absolute top-24 md:top-32 left-0 w-full px-6 md:px-12 lg:px-24 z-20">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
           <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted">React.js Developer</span>
           <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted hidden sm:block">Based in Cairo, Egypt</span>
@@ -123,7 +125,7 @@ export default function Hero() {
       </div>
 
       {/* Main Name */}
-      <div className="px-6 md:px-12 lg:px-24 w-full relative z-10">
+      <div className="px-6 md:px-12 lg:px-24 w-full relative z-20">
         <div className="max-w-7xl mx-auto">
           <div className="overflow-hidden">
             <h1 ref={row1Ref} className="font-heading font-extrabold text-foreground" style={nameStyle}>NADER</h1>
@@ -151,7 +153,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom */}
-      <div ref={bottomRef} className="absolute bottom-16 md:bottom-14 left-0 w-full px-6 md:px-12 lg:px-24 z-10">
+      <div ref={bottomRef} className="absolute bottom-16 md:bottom-14 left-0 w-full px-6 md:px-12 lg:px-24 z-20">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
           <p className="font-body text-muted text-xs md:text-sm max-w-xs md:max-w-sm leading-relaxed">
             Specializing in building responsive, interactive web applications with clean code and exceptional user experiences.
@@ -166,7 +168,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll */}
-      <div ref={scrollRef} className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10">
+      <div ref={scrollRef} className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-20">
         <div className="w-[1px] h-8 md:h-10 relative overflow-hidden" style={{ backgroundColor: "var(--color-border)" }}>
           <div className="w-full h-4 absolute top-0 left-0" style={{ backgroundColor: "var(--color-accent)", animation: "scrollDown 2s ease-in-out infinite" }} />
         </div>
