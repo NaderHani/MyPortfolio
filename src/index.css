@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Theme Variables ===== */
+:root {
+  --color-primary: #f5f5f0;
+  --color-secondary: #eaeae5;
+  --color-foreground: #1a1a1a;
+  --color-muted: #666666;
+  --color-accent: #6d28d9;
+  --color-accent-hover: #7c3aed;
+  --color-border: #d4d4d4;
+}
+
+.dark {
+  --color-primary: #0a0a0a;
+  --color-secondary: #141414;
+  --color-foreground: #e8e8e8;
+  --color-muted: #888888;
+  --color-accent: #a78bfa;
+  --color-accent-hover: #8b5cf6;
+  --color-border: #262626;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--color-primary);
+  color: var(--color-foreground);
+  overflow-x: hidden;
+  transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* ===== Selection ===== */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* ===== Custom Cursor ===== */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* ===== Link Hover Underline ===== */
+.hover-link {
+  position: relative;
+  display: inline-block;
+}
+.hover-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-foreground);
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hover-link:hover::after {
+  width: 100%;
+}
+
+/* ===== Section Spacing ===== */
+.section-padding {
+  padding: 8rem 0;
+}
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 5rem 0;
+  }
+}
+
+/* ===== Noise Overlay ===== */
+.noise-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.5;
+}
+
+/* ===== Project Hover ===== */
+.project-item {
+  transition: background-color 0.4s ease;
+}
+.project-item:hover {
+  background-color: var(--color-secondary);
+}
+
+/* ===== Hide Cursor on Touch ===== */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none !important;
+  }
+}
