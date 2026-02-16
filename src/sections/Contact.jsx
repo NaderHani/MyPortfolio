@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Web3Forms — get your free access key at https://web3forms.com/
 // Enter your email → check inbox → copy the key below:
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_KEY = "5fb3aee2-a326-42b3-9e66-5307ad46fa82";
 
 const socials = [
   { label: "GitHub", href: "https://github.com/NaderHani" },
