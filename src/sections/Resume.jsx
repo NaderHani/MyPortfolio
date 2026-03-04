@@ -89,8 +89,8 @@ export default function Resume() {
         {/* Download Button - Prominent */}
         <div ref={addRef} className="mb-16 md:mb-20">
           <a
-            href="/Nader-Hani-Ali-Resume.pdf"
-            download="Nader Hani Ali - Resume.pdf"
+            href="/Nader Hani Ali_FrontEnd-Cv.pdf"
+            download="Nader Hani Ali_FrontEnd Cv.pdf"
             className="group inline-flex items-center gap-4 px-8 py-5 rounded-full font-heading font-bold text-lg md:text-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl"
             style={{
               backgroundColor: "var(--color-accent)",
@@ -160,14 +160,10 @@ export default function Resume() {
             <div className="flex flex-col gap-4">
               {certificates.map((cert, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <span
-                    className="font-heading text-sm text-accent mt-[2px] shrink-0"
-                  >
+                  <span className="font-heading text-sm text-accent mt-[2px] shrink-0">
                     0{i + 1}
                   </span>
-                  <p className="font-body text-foreground text-base">
-                    {cert}
-                  </p>
+                  <p className="font-body text-foreground text-base">{cert}</p>
                 </div>
               ))}
             </div>
